@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - '9'
+  - '8'
+services:
+  - mongodb
+cache:
+  directories:
+    - ~/.npm
+
+notifications:
+  email: false
+
+before_script:
+  - echo "DB_DRIVER = sqlite" >> .env
+  - echo "DB_NAME = shopping.sqlite" >> .env
+  - echo "DB_HOST = shopping.sqlite" >> .env
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
