@@ -1,0 +1,5 @@
+--recursive
+--require ts-node/register
+--reporter spec
+--ui tdd
+--exit

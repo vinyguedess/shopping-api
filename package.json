@@ -1,0 +1,53 @@
+{
+    "name": "simple-shopping-api",
+    "version": "1.0.0",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "dotenv": "^6.0.0",
+        "express": "^4.16.3",
+        "jsonwebtoken": "^8.3.0",
+        "passport": "^0.4.0",
+        "passport-jwt": "^4.0.0",
+        "sequelize": "^4.38.0",
+        "sqlite3": "^4.0.1"
+    },
+    "devDependencies": {
+        "@types/mocha": "^5.2.4",
+        "@types/node": "^10.5.2",
+        "axios": "^0.18.0",
+        "chai": "^4.1.2",
+        "eslint": "^5.1.0",
+        "eslint-plugin-typescript": "^0.12.0",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.2.0",
+        "mocha": "^5.2.0",
+        "nyc": "^12.0.2",
+        "sinon": "^6.1.3",
+        "ts-node": "^7.0.0",
+        "tslint": "^5.10.0",
+        "typescript": "^2.9.2"
+    },
+    "nyc": {
+        "extension": [
+            ".ts"
+        ],
+        "exclude": [
+            "**/*.d.ts",
+            "config",
+            "test"
+        ],
+        "reporter": [
+            "lcov",
+            "text"
+        ]
+    },
+    "scripts": {
+        "build": "tsc",
+        "lint": "npm run lint:src && npm run lint:test",
+        "lint:src": "./node_modules/.bin/eslint src/ --fix",
+        "lint:test": "./node_modules/.bin/eslint test/ --fix",
+        "precommit": "./node_modules/.bin/lint-staged",
+        "start": "./node_modules/.bin/ts-node src/server.ts",
+        "test": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha test/**/*.ts"
+    }
+}
