@@ -1,12 +1,12 @@
-import { post } from "../../../Core/Http";
+import { post } from "../Http";
 import LoginService from "../Services/LoginService";
-import AuthMiddleware from "../../../Core/Middlewares/AuthMiddleware";
+import AuthMiddleware from "../Middlewares/AuthMiddleware";
 
 
 export default class AuthController
 {
 
-    @post("/v1/auth/login")
+    @post("/auth/login")
     loginAction(request, response)
     {
         const { user, pass } = request.body;
@@ -24,7 +24,7 @@ export default class AuthController
             });
     }
 
-    @post("/v1/auth/refresh", [new AuthMiddleware])
+    @post("/auth/refresh", [new AuthMiddleware])
     refreshTokenAction(request, response)
     {
         const loginService = new LoginService();

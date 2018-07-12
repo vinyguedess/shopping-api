@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import Axios from "axios";
-import { app } from "./../../../src/app/bootstrap";
+import { app } from "./../../src/app/bootstrap";
 
 
 describe("Test/Integration/v1/HomeTest", (): void =>
@@ -13,7 +13,7 @@ describe("Test/Integration/v1/HomeTest", (): void =>
     {
         it("Should make login without trouble", (done): void =>
         {
-            Axios.get("http://127.0.0.1:3001/v1")
+            Axios.get("http://127.0.0.1:3001/")
                 .then(({ data, status }) =>
                 {
                     expect(status).to.be.equal(200);

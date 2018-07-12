@@ -1,6 +1,6 @@
 import * as crypto from "crypto";
 import * as Sequelize from "sequelize";
-import Database from "../../../Core/Database";
+import Database from "../Database";
 
 
 const DB = Database();

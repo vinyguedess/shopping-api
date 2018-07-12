@@ -1,10 +1,10 @@
-import { get } from "../../../Core/Http";
+import { get } from "../Http";
 
 
 export default class HomeController
 {
 
-    @get("/v1/")
+    @get("/")
     indexAction(request, response)
     {
         return response.json({

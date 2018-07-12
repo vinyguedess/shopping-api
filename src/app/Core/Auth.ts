@@ -1,7 +1,7 @@
 import * as Passport from "passport";
 import * as PassportJWT from "passport-jwt";
-import jwt from "./../../config/jwt";
-import User from "../API/v1/Models/User";
+import jwt from "../../config/jwt";
+import User from "./Models/User";
 
 
 export default class Authentication

@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import Axios from "axios";
-import { app } from "./../../../src/app/bootstrap";
-import User from "../../../src/app/API/v1/Models/User";
+import { app } from "./../../src/app/bootstrap";
+import User from "../../src/app/Core/Models/User";
 
 
 describe("Test/Integration/v1/AuthTest", (): void =>
@@ -21,7 +21,7 @@ describe("Test/Integration/v1/AuthTest", (): void =>
     {
         it("Should make login without trouble", (done): void =>
         {
-            Axios.post("http://127.0.0.1:3001/v1/auth/login", {
+            Axios.post("http://127.0.0.1:3001/auth/login", {
                 user: "vguedes",
                 pass: "vg321@123"
             })
@@ -38,7 +38,7 @@ describe("Test/Integration/v1/AuthTest", (): void =>
 
         it("Should return error in case there's a problem on login", (done): void => 
         {
-            Axios.post("http://127.0.0.1:3001/v1/auth/login", {
+            Axios.post("http://127.0.0.1:3001/auth/login", {
                 user: "unknown",
                 pass: "wrong"
             })
@@ -56,7 +56,7 @@ describe("Test/Integration/v1/AuthTest", (): void =>
     {
         it("Should revalidate token without trouble", (done): void =>
         {
-            Axios.post("http://127.0.0.1:3001/v1/auth/refresh", {
+            Axios.post("http://127.0.0.1:3001/auth/refresh", {
                 refresh_token: server.tokens.refresh_token
             }, {
                     headers: {
@@ -75,7 +75,7 @@ describe("Test/Integration/v1/AuthTest", (): void =>
 
         it("Should return error in case problem with refresh token", (done): void =>
         {
-            Axios.post("http://127.0.0.1:3001/v1/auth/refresh", {
+            Axios.post("http://127.0.0.1:3001/auth/refresh", {
                 refresh_token: "9392384029384023"
             }, {
                     headers: {
@@ -93,7 +93,7 @@ describe("Test/Integration/v1/AuthTest", (): void =>
 
         it("Should return error in case it's not a valid refresh token", (done): void => 
         {
-            Axios.post("http://127.0.0.1:3001/v1/auth/refresh", {
+            Axios.post("http://127.0.0.1:3001/auth/refresh", {
                 refresh_token: server.tokens.access_token
             }, {
                     headers: {

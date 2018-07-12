@@ -1,7 +1,7 @@
 import * as crypto from "crypto";
 import * as JWT from "jsonwebtoken";
-import jwt from "../../../../config/jwt";
-import BaseService from "../../../Core/BaseService";
+import jwt from "../../../config/jwt";
+import BaseService from "../BaseService";
 import { IToken } from "../Interfaces/IToken";
 import User from "../Models/User";
 
