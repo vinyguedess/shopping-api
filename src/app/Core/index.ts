@@ -25,7 +25,7 @@ const prepareEnvironment = () => Promise.all([
 
 const loadModels = () =>
 {
-    // User.sync({ alter: true });
+    User.sync();
 }
 
 

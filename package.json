@@ -48,6 +48,6 @@
         "lint:test": "./node_modules/.bin/eslint test/ --fix",
         "precommit": "./node_modules/.bin/lint-staged",
         "start": "./node_modules/.bin/ts-node src/server.ts",
-        "test": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha test/**/*.ts"
+        "test": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha test/**/*.ts test/**/**/*.ts"
     }
 }

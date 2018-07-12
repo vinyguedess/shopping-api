@@ -24,7 +24,7 @@ describe("Test/Integration/v1/ProductsTest", () =>
             Axios.get("http://127.0.0.1:3001/v1/products")
                 .then(({ status, data }) =>
                 {
-                    expect(status).to.be.true;
+                    expect(status).to.be.equal(200);
                     console.log(data);
                 })
                 .then(done);

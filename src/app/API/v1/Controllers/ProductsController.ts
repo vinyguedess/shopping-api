@@ -5,9 +5,9 @@ export default class ProductsController
 {
 
     @get("/v1/products")
-    public indexAction()
+    public indexAction(request, response)
     {
-        return [];
+        return response.json([]);
     }
 
 }

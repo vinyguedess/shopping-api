@@ -1,3 +1,4 @@
+import ProductsController from "./Controllers/ProductsController";
 
 
 
@@ -10,5 +11,5 @@ export default {
 
 
 const loadControllers = () => [
-    // new HomeController()
+    new ProductsController()
 ];
